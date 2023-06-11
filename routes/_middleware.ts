@@ -40,7 +40,6 @@ export async function handler(
   const url = new URL(request.url);
   if (isStaticFile(url.pathname)) {
     if (url.pathname.endsWith(".png") || url.pathname.endsWith(".jpg")) {
-      console.log("ending resposne early");
       return new Response(
         await resizeImage(
           `static${url.pathname}`,
